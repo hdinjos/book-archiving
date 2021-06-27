@@ -25,6 +25,7 @@
             data-bs-toggle="modal"
             data-bs-target="#modalDelete"
             class="btn btn-link btn-sm text-danger"
+            @click="getIndex"
           >
             Delete
           </button>
@@ -42,6 +43,11 @@ export default {
   },
   mounted() {
     console.log(this.books);
+  },
+  methods: {
+    getIndex() {
+      this.$store.commit("setIndexDelete");
+    },
   },
 };
 </script>
