@@ -30,7 +30,12 @@
           >
             Back
           </button>
-          <button data-bs-dismiss="modal" type="button" class="btn btn-primary">
+          <button
+            @click="deleteBook"
+            data-bs-dismiss="modal"
+            type="button"
+            class="btn btn-primary"
+          >
             Yes
           </button>
         </div>
@@ -40,7 +45,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    deleteBook() {
+      this.$store.commit("deleteBook");
+    },
+  },
+};
 </script>
 
 <style>
