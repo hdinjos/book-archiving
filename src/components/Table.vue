@@ -1,39 +1,37 @@
 <template>
-  <div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th v-for="(col, i) in columns" :key="i" scope="col">{{ col }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(book, i) in books" :key="i">
+        <td scope="row">{{ i + 1 }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.publisher }}</td>
+        <td>{{ book.publicationYear }}</td>
+        <td>{{ book.print }}</td>
+        <td>
+          <button class="btn btn-link btn-sm me-2">Edit</button>
+          <button class="btn btn-link btn-sm text-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    columns: Array,
+    books: Array,
+  },
+  mounted() {
+    console.log(this.books);
+  },
+};
 </script>
 
 <style>
