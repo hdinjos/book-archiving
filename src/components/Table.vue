@@ -6,6 +6,9 @@
       </tr>
     </thead>
     <tbody>
+      <tr class="text-center" v-if="books.length === 0">
+        <td colspan="7" class="p-5">Data kosong</td>
+      </tr>
       <tr v-for="(book, i) in books" :key="i">
         <td scope="row">{{ i + 1 }}</td>
         <td>{{ book.title }}</td>
@@ -17,7 +20,7 @@
           <button
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
-            class="btn btn-link btn-sm me-2"
+            class="btn btn-link btn-sm me-2 shadow-none"
             @click="getDataEdit(book, i)"
           >
             Edit
@@ -25,7 +28,7 @@
           <button
             data-bs-toggle="modal"
             data-bs-target="#modalDelete"
-            class="btn btn-link btn-sm text-danger"
+            class="btn btn-link btn-sm text-danger shadow-none"
             @click="getIndex(i)"
           >
             Delete

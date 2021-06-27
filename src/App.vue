@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container my-2">
     <router-view />
     <Alert />
   </div>

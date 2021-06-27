@@ -10,6 +10,11 @@
 export default {
   methods: {
     toAddBookPage() {
+      this.$store.commit("formInput/updateTitle", "");
+      this.$store.commit("formInput/updateAuthor", "");
+      this.$store.commit("formInput/updatePublisher", "");
+      this.$store.commit("formInput/updatePublicationYear", "");
+      this.$store.commit("formInput/updatePrint", "");
       this.$router.push("/add-book");
     },
   },
