@@ -1,24 +1,39 @@
 # book-archiving
 
-## Project setup
+This app makes it easy for people to find books and add a new book, even old books are in the find
+
+Its features include:
+
+- Listing books
+- Adding book
+- Editing book
+- Delete book
+
+### Preparation
+
+For initial preparation, you must install [nodejs](https://nodejs.org/en/) which is LTS (Long Term Support) at least 10 version, or the latest version, because it uses the [vuejs framework](https://vuejs.org )
+
+### Instalation
+
+Use package manager [npm]()/[yarn](https://yarnpkg.com/) to install this system
+
 ```
-npm install
+npm install / yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Used (development)
+
 ```
-npm run serve
+npm run serve / yarn run serve
 ```
 
-### Compiles and minifies for production
+### Use (production)
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run build / yarn run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### For lints and fixes files
+```
+npm run lint / yarn run lint
+```
+
