@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <router-view />
-    <Alert v-if="validation" />
+    <Alert />
   </div>
 </template>
 

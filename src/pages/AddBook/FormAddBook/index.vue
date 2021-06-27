@@ -70,6 +70,7 @@ export default {
         this.$store.commit("formInput/updatePublicationYear", "");
         this.$store.commit("formInput/updatePrint", "");
         this.$router.push("/");
+        this.$store.commit("notification/setAlertSuccess", true);
       } else {
         this.$store.commit("notification/setValidation", true);
       }
