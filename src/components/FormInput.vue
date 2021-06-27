@@ -92,12 +92,6 @@ export default {
       },
     },
   },
-  // updated() {
-  //   console.log(this.$store.getters["formInput/getPrint"]);
-  // },
-  // mounted() {
-  //   console.log(this.$store.getters["formInput/getPrint"]);
-  // },
 };
 </script>
 

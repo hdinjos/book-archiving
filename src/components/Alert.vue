@@ -2,8 +2,7 @@
   <div>
     <div
       v-if="failed"
-      style="position: fixed; right: 0; z-index: 1; bottom: 10px"
-      class="w-25 alert alert-danger alert-dismissible fade show"
+      class="point-view w-25 alert alert-danger alert-dismissible fade show"
       role="alert"
     >
       <strong>Warning!</strong> All field must be filled
@@ -16,8 +15,7 @@
     </div>
     <div
       v-if="success"
-      style="position: fixed; right: 0; z-index: 1; bottom: 10px"
-      class="w-25 alert alert-success alert-dismissible fade show"
+      class="point-view w-25 alert alert-success alert-dismissible fade show"
       role="alert"
     >
       <strong>Success!</strong> Perubahan Data Berhasil
@@ -60,3 +58,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.point-view {
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  bottom: 10px;
+}
+</style>
