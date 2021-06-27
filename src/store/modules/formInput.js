@@ -6,6 +6,7 @@ const formInput = {
     publisher: "",
     publicationYear: "",
     print: "",
+    indexEdit: "",
   }),
   mutations: {
     updateTitle(state, payload) {
@@ -22,6 +23,9 @@ const formInput = {
     },
     updatePrint(state, payload) {
       state.print = payload;
+    },
+    setIndexEdit(state, index) {
+      state.indexEdit = index;
     },
   },
   getters: {
@@ -41,7 +45,19 @@ const formInput = {
       return state.print;
     },
   },
-  actions: {},
+  actions: {
+    updateBook({ commit, state }) {
+      const payloadData = {
+        index: state.indexEdit,
+        title: state.title,
+        author: state.author,
+        publisher: state.publisher,
+        publicationYear: state.publicationYear,
+        print: state.print,
+      };
+      commit("editBook", payloadData, { root: true });
+    },
+  },
 };
 
 export default formInput;
