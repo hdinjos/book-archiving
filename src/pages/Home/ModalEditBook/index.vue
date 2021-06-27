@@ -34,7 +34,6 @@
             data-bs-dismiss="modal"
             type="button"
             class="btn btn-primary"
-            :disabled="isValidEdit"
           >
             Save
           </button>
