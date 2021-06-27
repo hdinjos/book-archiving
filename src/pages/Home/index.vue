@@ -8,7 +8,7 @@
 
 <script>
 import Table from "@/components/Table";
-import AddButton from "@/pages/AddBook/AddButton";
+import AddButton from "@/pages/Home/AddButton";
 import DB from "@/storages/db.JSON";
 
 const columns = [
