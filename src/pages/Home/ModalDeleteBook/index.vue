@@ -48,6 +48,7 @@
 export default {
   methods: {
     deleteBook() {
+      this.$store.commit("notification/setAlertSuccess", true);
       this.$store.commit("deleteBook");
     },
   },

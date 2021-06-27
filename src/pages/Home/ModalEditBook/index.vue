@@ -18,6 +18,7 @@
           ></button>
         </div>
         <div class="modal-body">
+          <div class="text-center">{{ title }}</div>
           <FormInput />
         </div>
         <div class="modal-footer">
@@ -33,6 +34,7 @@
             data-bs-dismiss="modal"
             type="button"
             class="btn btn-primary"
+            :disabled="isValidEdit"
           >
             Save
           </button>
@@ -48,9 +50,37 @@ export default {
   components: {
     FormInput,
   },
+  computed: {
+    title() {
+      return this.$store.getters["formInput/getTitle"];
+    },
+    author() {
+      return this.$store.getters["formInput/getAuthor"];
+    },
+    publisher() {
+      return this.$store.getters["formInput/getPublisher"];
+    },
+    publicationYear() {
+      return this.$store.getters["formInput/getPublicationYear"];
+    },
+    print() {
+      return this.$store.getters["formInput/getPrint"];
+    },
+  },
   methods: {
     UpdateBook() {
-      this.$store.dispatch("formInput/updateBook");
+      if (
+        this.title &&
+        this.author &&
+        this.publisher &&
+        this.publicationYear &&
+        this.print
+      ) {
+        this.$store.dispatch("formInput/updateBook");
+        this.$store.commit("notification/setAlertSuccess", true);
+      } else {
+        this.$store.commit("notification/setValidation", true);
+      }
     },
   },
 };

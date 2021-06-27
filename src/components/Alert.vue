@@ -2,7 +2,7 @@
   <div>
     <div
       v-if="failed"
-      style="position: absolute; right: 0; z-index: 10; bottom: 10px"
+      style="position: fixed; right: 0; z-index: 1; bottom: 10px"
       class="w-25 alert alert-danger alert-dismissible fade show"
       role="alert"
     >
@@ -16,7 +16,7 @@
     </div>
     <div
       v-if="success"
-      style="position: absolute; right: 0; z-index: 10; bottom: 10px"
+      style="position: fixed; right: 0; z-index: 1; bottom: 10px"
       class="w-25 alert alert-success alert-dismissible fade show"
       role="alert"
     >
