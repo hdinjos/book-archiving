@@ -11,7 +11,7 @@ Its features include:
 
 ### Preparation
 
-For initial preparation, you must install [nodejs](https://nodejs.org/en/) which is LTS (Long Term Support) at least 10 version, or the latest version, because it uses the [vuejs framework](https://vuejs.org )
+For initial preparation, you must install [nodejs](https://nodejs.org/en/) which is LTS (Long Term Support) at least 10 version, or the latest version, because it uses the [vuejs framework](https://vuejs.org)
 
 ### Instalation
 
@@ -27,13 +27,14 @@ npm install / yarn install
 npm run serve / yarn run serve
 ```
 
-### Use (production)
+### Used (production)
+
 ```
 npm run build / yarn run build
 ```
 
 ### For lints and fixes files
+
 ```
 npm run lint / yarn run lint
 ```
-
