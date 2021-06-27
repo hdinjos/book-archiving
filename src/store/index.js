@@ -8,6 +8,11 @@ export default new Vuex.Store({
   state: {
     books: DB.books,
   },
+  getters: {
+    getAllBooks(state) {
+      return state.books;
+    },
+  },
   mutations: {},
   actions: {},
   modules: {},

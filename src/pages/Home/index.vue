@@ -2,7 +2,7 @@
   <div>
     <h1 class="text-center">Welcome to our Apps</h1>
     <AddButton />
-    <Table :columns="columns" :books="books" />
+    <Table :columns="columns" :books="getAllBooks" />
     <ModalEditBook />
     <ModalDeleteBook />
   </div>
@@ -13,7 +13,6 @@ import Table from "@/components/Table";
 import AddButton from "@/pages/Home/AddButton";
 import ModalEditBook from "@/pages/Home/ModalEditBook";
 import ModalDeleteBook from "@/pages/Home/ModalDeleteBook";
-import DB from "@/storages/db.JSON";
 
 const columns = [
   "No",
@@ -27,7 +26,6 @@ const columns = [
 
 export default {
   data: () => ({
-    books: DB.books,
     columns: columns,
   }),
   components: {
@@ -35,6 +33,11 @@ export default {
     AddButton,
     ModalEditBook,
     ModalDeleteBook,
+  },
+  computed: {
+    getAllBooks() {
+      return this.$store.state.books;
+    },
   },
 };
 </script>
