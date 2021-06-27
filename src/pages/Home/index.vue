@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="text-center">Welcome to our Apps</h1>
-    <AddButton />
+    <Jumbotron />
+    <AddButton class="mb-2" />
     <Table :columns="columns" :books="getAllBooks" />
     <ModalEditBook />
     <ModalDeleteBook />
@@ -13,26 +13,26 @@ import Table from "@/components/Table";
 import AddButton from "@/pages/Home/AddButton";
 import ModalEditBook from "@/pages/Home/ModalEditBook";
 import ModalDeleteBook from "@/pages/Home/ModalDeleteBook";
-
-const columns = [
-  "No",
-  "Title",
-  "Author",
-  "Publisher",
-  "Publication Year",
-  "Print",
-  "Action",
-];
+import Jumbotron from "@/pages/Home/Jumbotron";
 
 export default {
   data: () => ({
-    columns: columns,
+    columns: [
+      "No",
+      "Title",
+      "Author",
+      "Publisher",
+      "Publication Year",
+      "Print",
+      "Action",
+    ],
   }),
   components: {
     Table,
     AddButton,
     ModalEditBook,
     ModalDeleteBook,
+    Jumbotron,
   },
   computed: {
     getAllBooks() {
