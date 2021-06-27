@@ -9,6 +9,7 @@ export default new Vuex.Store({
   namespaced: true,
   state: {
     books: DB.books,
+    indexDelete: "",
   },
   getters: {
     getAllBooks(state) {
@@ -18,6 +19,12 @@ export default new Vuex.Store({
   mutations: {
     addBook(state, payload) {
       state.books.push(payload);
+    },
+    setIndexDelete(state, index) {
+      state.indexDelete = index;
+    },
+    deleteBook(state) {
+      state.books.splice(state.indexDelete, 1);
     },
   },
   actions: {},
