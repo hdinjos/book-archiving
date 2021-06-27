@@ -14,8 +14,20 @@
         <td>{{ book.publicationYear }}</td>
         <td>{{ book.print }}</td>
         <td>
-          <button class="btn btn-link btn-sm me-2">Edit</button>
-          <button class="btn btn-link btn-sm text-danger">Delete</button>
+          <button
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            class="btn btn-link btn-sm me-2"
+          >
+            Edit
+          </button>
+          <button
+            data-bs-toggle="modal"
+            data-bs-target="#modalDelete"
+            class="btn btn-link btn-sm text-danger"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
