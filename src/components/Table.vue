@@ -18,6 +18,7 @@
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
             class="btn btn-link btn-sm me-2"
+            @click="getDataEdit(book, i)"
           >
             Edit
           </button>
@@ -25,7 +26,7 @@
             data-bs-toggle="modal"
             data-bs-target="#modalDelete"
             class="btn btn-link btn-sm text-danger"
-            @click="getIndex"
+            @click="getIndex(i)"
           >
             Delete
           </button>
@@ -41,12 +42,20 @@ export default {
     columns: Array,
     books: Array,
   },
-  mounted() {
-    console.log(this.books);
-  },
   methods: {
-    getIndex() {
-      this.$store.commit("setIndexDelete");
+    getIndex(index) {
+      this.$store.commit("setIndexDelete", index);
+    },
+    getDataEdit(dataBook, index) {
+      this.$store.commit("formInput/updateTitle", dataBook.title);
+      this.$store.commit("formInput/updateAuthor", dataBook.author);
+      this.$store.commit("formInput/updatePublisher", dataBook.publisher);
+      this.$store.commit(
+        "formInput/updatePublicationYear",
+        dataBook.publicationYear
+      );
+      this.$store.commit("formInput/updatePrint", dataBook.print);
+      this.$store.commit("formInput/setIndexEdit", index);
     },
   },
 };
