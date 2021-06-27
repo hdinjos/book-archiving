@@ -22,11 +22,41 @@ export default {
   components: {
     FormInput,
   },
+  computed: {
+    title() {
+      return this.$store.getters["formInput/getTitle"];
+    },
+    author() {
+      return this.$store.getters["formInput/getAuthor"];
+    },
+    publisher() {
+      return this.$store.getters["formInput/getPublisher"];
+    },
+    publicationYear() {
+      return this.$store.getters["formInput/getPublicationYear"];
+    },
+    print() {
+      return this.$store.getters["formInput/getPrint"];
+    },
+  },
   methods: {
     backToHome() {
       this.$router.push("/");
     },
     saveBook() {
+      const payload = {
+        title: this.title,
+        author: this.author,
+        publisher: this.publisher,
+        publicationYear: this.publicationYear,
+        print: this.print,
+      };
+      this.$store.commit("addBook", payload);
+      this.$store.commit("formInput/updateTitle", "");
+      this.$store.commit("formInput/updateAuthor", "");
+      this.$store.commit("formInput/updatePublisher", "");
+      this.$store.commit("formInput/updatePublicationYear", "");
+      this.$store.commit("formInput/updatePrint", "");
       this.$router.push("/");
     },
   },
