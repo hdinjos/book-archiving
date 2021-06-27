@@ -1,12 +1,14 @@
 <template>
   <div>
     <h1 class="text-center">Welcome to our Apps</h1>
+    <AddButton />
     <Table :columns="columns" :books="books" />
   </div>
 </template>
 
 <script>
 import Table from "@/components/Table";
+import AddButton from "@/pages/AddBook/AddButton";
 import DB from "@/storages/db.JSON";
 
 const columns = [
@@ -26,6 +28,7 @@ export default {
   }),
   components: {
     Table,
+    AddButton,
   },
 };
 </script>
