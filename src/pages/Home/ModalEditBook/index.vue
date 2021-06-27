@@ -28,7 +28,12 @@
           >
             Back
           </button>
-          <button data-bs-dismiss="modal" type="button" class="btn btn-primary">
+          <button
+            @click="UpdateBook"
+            data-bs-dismiss="modal"
+            type="button"
+            class="btn btn-primary"
+          >
             Save
           </button>
         </div>
@@ -42,6 +47,11 @@ import FormInput from "@/components/FormInput";
 export default {
   components: {
     FormInput,
+  },
+  methods: {
+    UpdateBook() {
+      this.$store.dispatch("formInput/updateBook");
+    },
   },
 };
 </script>
