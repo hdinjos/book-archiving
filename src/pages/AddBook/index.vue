@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h1 class="text-center">Add your book now</h1>
-    <FormInput />
+    <h2 class="text-center">Add book now</h2>
+    <FormAddBook />
   </div>
 </template>
 
 <script>
-import FormInput from "@/components/FormInput";
+import FormAddBook from "@/pages/AddBook/FormAddBook";
 export default {
   components: {
-    FormInput,
+    FormAddBook,
   },
 };
 </script>
