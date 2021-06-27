@@ -46,9 +46,11 @@ export default {
     books: Array,
   },
   methods: {
+    //take index from table
     getIndex(index) {
       this.$store.commit("setIndexDelete", index);
     },
+    //get data that can edit and pass to module formInput state
     getDataEdit(dataBook, index) {
       this.$store.commit("formInput/updateTitle", dataBook.title);
       this.$store.commit("formInput/updateAuthor", dataBook.author);

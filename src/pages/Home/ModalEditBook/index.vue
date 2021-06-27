@@ -18,7 +18,7 @@
           ></button>
         </div>
         <div class="modal-body">
-          <div class="text-center">{{ title }}</div>
+          <!-- from component form input -->
           <FormInput />
         </div>
         <div class="modal-footer">
@@ -75,9 +75,11 @@ export default {
         this.publicationYear &&
         this.print
       ) {
+        //is success
         this.$store.dispatch("formInput/updateBook");
         this.$store.commit("notification/setAlertSuccess", true);
       } else {
+        //is failure
         this.$store.commit("notification/setValidation", true);
       }
     },

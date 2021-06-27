@@ -11,11 +11,6 @@ export default {
   components: {
     Alert,
   },
-  computed: {
-    validation() {
-      return this.$store.state.notification.validation;
-    },
-  },
 };
 </script>
 

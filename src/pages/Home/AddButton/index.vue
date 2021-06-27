@@ -10,6 +10,7 @@
 export default {
   methods: {
     toAddBookPage() {
+      //clear all field input
       this.$store.commit("formInput/updateTitle", "");
       this.$store.commit("formInput/updateAuthor", "");
       this.$store.commit("formInput/updatePublisher", "");

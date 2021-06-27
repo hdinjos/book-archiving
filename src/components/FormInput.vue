@@ -51,6 +51,7 @@
 <script>
 export default {
   computed: {
+    //direct data binding from state module formInput
     title: {
       get() {
         return this.$store.getters["formInput/getTitle"];

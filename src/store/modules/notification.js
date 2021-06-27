@@ -12,8 +12,6 @@ const notification = {
       state.alertSuccess = value;
     },
   },
-  actions: {},
-  getters: {},
 };
 
 export default notification;

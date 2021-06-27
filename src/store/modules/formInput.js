@@ -24,6 +24,7 @@ const formInput = {
     updatePrint(state, payload) {
       state.print = payload;
     },
+    //take id from table component
     setIndexEdit(state, index) {
       state.indexEdit = index;
     },
@@ -55,6 +56,7 @@ const formInput = {
         publicationYear: state.publicationYear,
         print: state.print,
       };
+      //change data book from global store/root store
       commit("editBook", payloadData, { root: true });
     },
   },

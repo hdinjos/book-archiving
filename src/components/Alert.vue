@@ -32,6 +32,7 @@
 <script>
 export default {
   computed: {
+    //take data from module state notification
     failed() {
       return this.$store.state.notification.validation;
     },
@@ -40,6 +41,7 @@ export default {
     },
   },
   methods: {
+    //call every close alert
     closeAlertFailed() {
       this.$store.commit("notification/setValidation", false);
     },
@@ -48,13 +50,14 @@ export default {
     },
   },
   mounted() {
-    setTimeout(() => {
-      this.$store.commit("notification/setValidation", false);
-    }, 5000);
+    //hiding alert automatically
+    setTimeout(function () {
+      this.closeAlertFailed();
+    }, 10000);
 
-    setTimeout(() => {
-      this.$store.commit("notification/setAlertSuccess", false);
-    }, 5000);
+    setTimeout(function () {
+      this.closeAlertSuccess();
+    }, 10000);
   },
 };
 </script>

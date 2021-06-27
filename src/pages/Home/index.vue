@@ -17,6 +17,7 @@ import Jumbotron from "@/pages/Home/Jumbotron";
 
 export default {
   data: () => ({
+    //for title table header
     columns: [
       "No",
       "Title",
@@ -35,8 +36,9 @@ export default {
     Jumbotron,
   },
   computed: {
+    //initial, getData from root state
     getAllBooks() {
-      return this.$store.state.books;
+      return this.$store.getters.getAllBooks;
     },
   },
 };

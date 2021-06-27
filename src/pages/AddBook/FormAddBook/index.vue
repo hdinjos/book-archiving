@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center">
       <div class="card w-50">
         <div class="card-body">
-          <FormInput :allData="validation" />
+          <FormInput />
         </div>
         <div class="card-footer">
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -21,9 +21,6 @@
 <script>
 import FormInput from "@/components/FormInput";
 export default {
-  data: () => ({
-    validation: true,
-  }),
   components: {
     FormInput,
   },
@@ -70,8 +67,10 @@ export default {
         this.$store.commit("formInput/updatePublicationYear", "");
         this.$store.commit("formInput/updatePrint", "");
         this.$router.push("/");
+        //is success
         this.$store.commit("notification/setAlertSuccess", true);
       } else {
+        //is failure
         this.$store.commit("notification/setValidation", true);
       }
     },

@@ -8,6 +8,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   namespaced: true,
   state: {
+    //pass from json data to state
     books: DB.books,
     indexDelete: "",
   },
@@ -20,10 +21,12 @@ export default new Vuex.Store({
     addBook(state, payload) {
       state.books.push(payload);
     },
+    //take id from table component
     setIndexDelete(state, index) {
       state.indexDelete = index;
     },
     deleteBook(state) {
+      //take id from state
       state.books.splice(state.indexDelete, 1);
     },
     editBook(state, payload) {
@@ -34,7 +37,6 @@ export default new Vuex.Store({
       state.books[payload.index].print = payload.print;
     },
   },
-  actions: {},
   modules: {
     formInput: formInput,
     notification: notification,
