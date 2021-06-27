@@ -15,7 +15,11 @@ export default new Vuex.Store({
       return state.books;
     },
   },
-  mutations: {},
+  mutations: {
+    addBook(state, payload) {
+      state.books.push(payload);
+    },
+  },
   actions: {},
   modules: {
     formInput: formInput,
