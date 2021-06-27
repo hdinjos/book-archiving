@@ -1,9 +1,17 @@
 <template>
-  <div>this home</div>
+  <div>
+    <h1 class="text-center">Welcome to our Apps</h1>
+    <Table />
+  </div>
 </template>
 
 <script>
-export default {};
+import Table from "@/components/Table";
+export default {
+  components: {
+    Table,
+  },
+};
 </script>
 
 <style>
