@@ -1,3 +1,4 @@
 import formInput from "./formInput";
+import notification from "./notification";
 
-export { formInput };
+export { formInput, notification };

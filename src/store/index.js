@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { formInput } from "./modules";
+import { formInput, notification } from "./modules";
 import DB from "../storages/db.JSON";
 
 Vue.use(Vuex);
@@ -37,5 +37,6 @@ export default new Vuex.Store({
   actions: {},
   modules: {
     formInput: formInput,
+    notification: notification,
   },
 });
